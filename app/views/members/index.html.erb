@@ -1,0 +1,21 @@
+<% provide(:title, 'All Members') %>
+
+<h1>Members List:</h1>
+
+<%= will_paginate %>
+
+<% @members.each do |member| %>
+  <p><%= member.name %></p>
+  <p><%= member.email %></p>
+  <p>
+    <%= link_to "Show", member %> | 
+    <%= link_to "Edit", edit_member_path(member) %> | 
+    <%= link_to "Delete", member, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </p>
+  <br>
+<% end %>
+
+<%= will_paginate %>
+
+<%= link_to 'Signup', signup_path %>
+<%# <%= link_to 'Login', login_path %> %>

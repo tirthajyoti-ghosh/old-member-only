@@ -1,0 +1,8 @@
+<p><%= @member.name %></p>
+<p><%= @member.email %></p>
+<p>
+  <%= link_to "Show", @member %> | 
+  <%= link_to "Edit", edit_member_path(@member) %> | 
+  <%= link_to "Delete", @member, method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
+<%= link_to 'Back', members_path %>
